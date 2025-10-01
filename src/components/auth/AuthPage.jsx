@@ -1,5 +1,5 @@
 import React from 'react';
-import { defaultAuthBgUrl, placeholderLogoUrl } from '../../assets/paths';
+import { defaultAuthBgUrl, logo } from '../../assets/paths';
 
 const AuthPage = ({ children, title, subtitle, backgroundImage = defaultAuthBgUrl }) => {
   return (
@@ -7,15 +7,11 @@ const AuthPage = ({ children, title, subtitle, backgroundImage = defaultAuthBgUr
       className="min-h-screen w-full bg-cover bg-center bg-no-repeat flex items-center justify-center px-4 py-10"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <div className="flex justify-center mb-3">
-            <img src={placeholderLogoUrl} alt="KSM Logo" className="h-12 w-12 rounded-full" />
-          </div>
-          <h1 className="text-2xl font-bold text-white drop-shadow">KSM Dashboard</h1>
-          <p className="text-white/90 mt-1 drop-shadow">Knights of Saint Mulumba</p>
+  <div className="w-full max-w-2xl">
+    <div className="bg-gray-300/95  rounded-lg shadow-xl p-16">
+         <div className="text-center mb-8">
+          <img src={logo} alt="Logo" className="mx-auto h-16 w-16 rounded-full shadow-lg mb-4" />
         </div>
-        <div className="bg-white/95 backdrop-blur rounded-lg shadow-xl p-8">
           {(title || subtitle) && (
             <div className="text-center mb-6">
               {title && (
@@ -29,7 +25,7 @@ const AuthPage = ({ children, title, subtitle, backgroundImage = defaultAuthBgUr
           {children}
         </div>
         <div className="mt-8 text-center text-sm text-white/90 drop-shadow">
-          <p>© 2024 Knights of Saint Mulumba. All rights reserved.</p>
+          <p>© 2025 Knights of Saint Mulumba. All rights reserved.</p>
         </div>
       </div>
     </div>

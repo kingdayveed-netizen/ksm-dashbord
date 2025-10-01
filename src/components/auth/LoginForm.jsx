@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import Button from '../ui/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { placeholderLogoUrl } from '../../assets/paths';
+import { logo } from '../../assets/paths';
 import AuthPage from './AuthPage';
 
 const LoginForm = () => {
@@ -50,10 +51,7 @@ const LoginForm = () => {
   };
 
   return (
-    <AuthPage title="Welcome Back" subtitle="Sign in to your account to continue">
-      <div className="flex justify-center mb-6">
-        <img src={placeholderLogoUrl} alt="KSM Logo" className="h-12 w-12" />
-      </div>
+    <AuthPage title="Welcome To KSM Dashboard" subtitle="Sign in to your account to continue">
       <form onSubmit={handleSubmit} className="space-y-6">
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md text-sm">{error}</div>
@@ -109,7 +107,7 @@ const LoginForm = () => {
 
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded" />
+            <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 accent-primary-600 focus:ring-primary-500 border-gray-300 rounded" />
             <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">Remember me</label>
           </div>
           <div className="text-sm">
@@ -117,9 +115,9 @@ const LoginForm = () => {
           </div>
         </div>
 
-        <button type="submit" disabled={isLoading} className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed">
+        <Button type="submit" disabled={isLoading}>
           {isLoading ? 'Signing in...' : 'Sign in'}
-        </button>
+        </Button>
 
         <div className="text-center">
           <p className="text-sm text-gray-600">

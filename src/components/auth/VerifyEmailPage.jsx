@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { placeholderLogoUrl } from '../../assets/paths';
+import { logo } from '../../assets/paths';
 import AuthPage from './AuthPage';
 
 const VerifyEmailPage = () => {
@@ -31,9 +31,6 @@ const VerifyEmailPage = () => {
 
   return (
     <AuthPage>
-      <div className="flex justify-center mb-6">
-        <img src={placeholderLogoUrl} alt="KSM Logo" className="h-12 w-12" />
-      </div>
       <h2 className="text-2xl font-bold text-gray-900 text-center mb-6">Email Verification</h2>
       <div className="text-center space-y-6">
         <div className={`mx-auto flex items-center justify-center h-12 w-12 rounded-full ${status === 'loading' ? 'bg-blue-100' : status === 'success' ? 'bg-green-100' : 'bg-red-100'}`}>

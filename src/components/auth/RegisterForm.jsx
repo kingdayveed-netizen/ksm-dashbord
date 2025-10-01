@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { placeholderLogoUrl } from '../../assets/paths';
+import { logo } from '../../assets/paths';
 import AuthPage from './AuthPage';
+import Button from '../ui/Button';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -77,9 +78,6 @@ const RegisterForm = () => {
 
   return (
     <AuthPage title="Create Account" subtitle="Join the Knights of Saint Mulumba community">
-      <div className="flex justify-center mb-6">
-        <img src={placeholderLogoUrl} alt="KSM Logo" className="h-12 w-12" />
-      </div>
       <form onSubmit={handleSubmit} className="space-y-6">
         {error && <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md text-sm">{error}</div>}
 
@@ -138,15 +136,15 @@ const RegisterForm = () => {
         </div>
 
         <div className="flex items-center">
-          <input id="terms" name="terms" type="checkbox" required className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded" />
+          <input id="terms" name="terms" type="checkbox" required className="h-4 w-4 accent-primary-600 focus:ring-primary-500 border-gray-300 rounded" />
           <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
             I agree to the <Link to="/terms" className="text-primary-600 hover:text-primary-500">Terms and Conditions</Link> and <Link to="/privacy" className="text-primary-600 hover:text-primary-500">Privacy Policy</Link>
           </label>
         </div>
 
-        <button type="submit" disabled={isLoading} className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed">
+        <Button type="submit" disabled={isLoading} className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed">
           {isLoading ? 'Creating account...' : 'Create Account'}
-        </button>
+        </Button>
 
         <div className="text-center">
           <p className="text-sm text-gray-600">
