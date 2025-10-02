@@ -3,7 +3,7 @@ import axios from 'axios';
 class ApiService {
   constructor() {
     this.api = axios.create({
-      baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001/api',
+      baseURL: process.env.REACT_APP_API_BASE_URL || '',
       timeout: parseInt(process.env.REACT_APP_API_TIMEOUT || '10000'),
       headers: { 'Content-Type': 'application/json' },
     });
